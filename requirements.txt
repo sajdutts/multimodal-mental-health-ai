@@ -1,0 +1,80 @@
+# Core Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Deep Learning Frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.20.0
+pytorch-lightning>=2.0.0
+
+# NLP and Text Processing (from Assignment 3)
+spacy>=3.4.0
+scispacy>=0.5.0
+gensim>=4.2.0
+textblob>=0.17.0
+nltk>=3.7.0
+
+# Medical NLP Models
+en-core-web-sm
+en-core-sci-sm
+
+# Machine Learning and Feature Engineering (from Assignment 5)
+xgboost>=1.6.0
+lightgbm>=3.3.0
+catboost>=1.0.0
+optuna>=3.0.0
+
+# Time Series Analysis
+statsmodels>=0.13.0
+tsfresh>=0.19.0
+pyod>=1.0.0  # Outlier detection for anomaly detection
+
+# Privacy-Preserving ML
+opacus>=1.3.0  # Differential privacy for PyTorch
+pysyft>=0.8.0  # Federated learning (optional)
+
+# Visualization and Analysis
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+bokeh>=2.4.0
+
+# Data Processing and I/O
+h5py>=3.6.0
+pyarrow>=8.0.0
+tables>=3.7.0
+
+# Clinical Data Processing
+pydicom>=2.3.0  # For medical imaging if needed
+mne>=1.0.0      # For EEG/physiological signals if available
+
+# Multimodal Learning
+clip-by-openai>=1.0  # For multimodal embeddings
+timm>=0.6.0          # Vision transformers
+
+# Evaluation and Metrics
+scikit-multilearn>=0.2.0  # Multi-label evaluation
+fairlearn>=0.8.0          # Bias and fairness metrics
+
+# Utilities
+tqdm>=4.64.0
+wandb>=0.13.0  # Experiment tracking
+hydra-core>=1.2.0  # Configuration management
+python-dotenv>=0.20.0
+
+# Jupyter and Development
+jupyter>=1.0.0
+ipykernel>=6.0.0
+ipywidgets>=7.7.0
+
+# Testing and Quality
+pytest>=7.0.0
+black>=22.0.0
+flake8>=4.0.0
+
+# Memory optimization
+memory-profiler>=0.60.0
+psutil>=5.9.0
