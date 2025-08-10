@@ -427,17 +427,17 @@ class MentalHealthPhenotyper:
         if crisis_events_df.empty:
             logger.warning("No crisis events identified")
             return pd.DataFrame()
+    
+        crisis_events_df['crisis_date'] = pd.to_datetime(crisis_events_df['crisis_date'])
         
         logger.info(f"Identified {len(crisis_events_df)} potential crisis events")
         
-        # Create prediction windows
         prediction_windows = []
         
         for _, crisis in crisis_events_df.iterrows():
-            crisis_date = crisis['crisis_date']
+            crisis_date = pd.to_datetime(crisis['crisis_date'])
             patient_id = crisis['SUBJECT_ID']
             
-            # Create windows before crisis for prediction
             for window_name, days_before in self.crisis_windows.items():
                 window_start = crisis_date - timedelta(days=days_before)
                 
@@ -508,11 +508,12 @@ class MentalHealthPhenotyper:
             
             for window_name, days_before in self.crisis_windows.items():
                 # Sample a random date
-                random_date = np.random.choice(note_dates)
+                random_date = pd.to_datetime(np.random.choice(note_dates))
                 
                 # Check if this date is far from any crisis
                 min_distance_to_crisis = float('inf')
                 for crisis_date in crisis_dates:
+                    crisis_date = pd.to_datetime(crisis_date)
                     distance = abs((random_date - crisis_date).days)
                     min_distance_to_crisis = min(min_distance_to_crisis, distance)
                 
